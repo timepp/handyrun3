@@ -1,6 +1,5 @@
 temp
-output/Debug
-ouput/Release
+output
 # Compiled Object files
 *.slo
 *.lo
