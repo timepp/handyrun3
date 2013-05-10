@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "appdb.h"
 #include "global.h"
-#include <handycore.h>
+#include <public/handycore.h>
 #include <map>
 
 bool operator< (const GUID& g1, const GUID& g2)

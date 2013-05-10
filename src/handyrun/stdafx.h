@@ -22,5 +22,6 @@
 #include <atlbase.h>
 #include <atlstr.h>
 
-// TODO: reference additional headers your program requires here
-#include <handycore.h>
+#include <public/handycore.h>
+#include <thirdparty/bdlog/include/bdlog.h>
+#include <thirdparty/bdlog/include/bdlog_util.h>

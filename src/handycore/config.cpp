@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include <handycore.h>
+#include <public/handycore.h>
 #include <thirdparty/rapidxml/rapidxml.hpp>
 #include <thirdparty/rapidxml/rapidxml_print.hpp>
 #include <map>

@@ -17,13 +17,20 @@ BOOL				InitInstance(HINSTANCE, int);
 LRESULT CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
 
-int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
-					 _In_opt_ HINSTANCE hPrevInstance,
-					 _In_ LPTSTR    lpCmdLine,
-					 _In_ int       nCmdShow)
+// 初始化日志系统
+void InitLog()
 {
-	UNREFERENCED_PARAMETER(hPrevInstance);
-	UNREFERENCED_PARAMETER(lpCmdLine);
+	ILogController* ctrl = GetLogController();
+	ctrl->Init(L"handyrun");
+	ctrl->AddOutputDevice(L"pipe", LODT_PIPE, L"enable:false");
+	ctrl->AddOutputDevice(L"memory", LODT_SHARED_MEMORY, L"enable:true");
+	ctrl->AddOutputDevice(L"file", LODT_FILE, L"enable:false");
+}
+
+int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE , _In_ LPTSTR lpCmdLine, _In_ int nCmdShow)
+{
+	InitLog();
+	Log(LL_EVENT, TAG_DEFAULT, L"handyrun进程启动，命令行：[%s]", lpCmdLine);
 
 	HrInitCore(L"d:\\", NULL);
 

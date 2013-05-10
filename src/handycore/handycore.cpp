@@ -2,12 +2,17 @@
 //
 
 #include "stdafx.h"
-#include <handycore.h>
+#include <public/handycore.h>
+
+#include <thirdparty/bdlog/include/bdlog_impl.h>
+
 #include "global.h"
 #include "appdb.h"
 
 HANDYCOREAPI HRESULT HrInitCore(BSTR config_path, HWND serv_wnd)
 {
+	LOG_FUNCTION(config_path, serv_wnd);
+
 	g_config_path = config_path;
 	InitAppDB();
 	return S_OK;
@@ -15,6 +20,8 @@ HANDYCOREAPI HRESULT HrInitCore(BSTR config_path, HWND serv_wnd)
 
 HANDYCOREAPI HRESULT HrUninitCore()
 {
+	LOG_FUNCTION();
+
 	UninitAppDB();
 	return S_OK;
 }

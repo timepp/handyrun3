@@ -1,16 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "handyrun", "handyrun\handyrun.vcxproj", "{2FCB58B7-DAF4-4D97-B911-7EF20A4DDF23}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "handyrun", "src\handyrun\handyrun.vcxproj", "{2FCB58B7-DAF4-4D97-B911-7EF20A4DDF23}"
 	ProjectSection(ProjectDependencies) = postProject
 		{5206EEC9-2339-48A3-B08F-3041C892FCF3} = {5206EEC9-2339-48A3-B08F-3041C892FCF3}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "handycore", "handycore\handycore.vcxproj", "{5206EEC9-2339-48A3-B08F-3041C892FCF3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "handycore", "src\handycore\handycore.vcxproj", "{5206EEC9-2339-48A3-B08F-3041C892FCF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{972C3830-C938-4317-9425-4CFB3BC83D6D}"
 	ProjectSection(SolutionItems) = preProject
-		public\handycore.h = public\handycore.h
+		src\public\handycore.h = src\public\handycore.h
 	EndProjectSection
 EndProject
 Global

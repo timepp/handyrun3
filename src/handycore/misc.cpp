@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include <handycore.h>
+#include <public/handycore.h>
 
 HANDYCOREAPI HRESULT HrLoadTextFile(LPCWSTR path, BSTR* content, UINT codepage)
 {

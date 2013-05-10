@@ -1,3 +1,6 @@
+temp
+output/Debug
+ouput/Release
 # Compiled Object files
 *.slo
 *.lo

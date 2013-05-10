@@ -10,3 +10,6 @@
 #include <atlstr.h>
 #include <atlsync.h>
 
+#define BDLOG_SELF_BUILD
+#include <thirdparty/bdlog/include/bdlog.h>
+#include <thirdparty/bdlog/include/bdlog_util.h>
