@@ -27,9 +27,7 @@
     <ClInclude Include="Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="handyrun.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="..\public\handyrun.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

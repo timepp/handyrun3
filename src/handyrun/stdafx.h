@@ -22,6 +22,6 @@
 #include <atlbase.h>
 #include <atlstr.h>
 
-#include <public/handycore.h>
-#include <thirdparty/bdlog/include/bdlog.h>
-#include <thirdparty/bdlog/include/bdlog_util.h>
+#include <thirdparty/tplog/include/tplog.h>
+#include <thirdparty/tplog/include/tplog_util.h>
+#include <public/handyrun.h>

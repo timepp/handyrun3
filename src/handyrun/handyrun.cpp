@@ -2,7 +2,84 @@
 //
 
 #include "stdafx.h"
-#include "handyrun.h"
+#include "Resource.h"
+#include <thirdparty\tplog\include\tplog_impl.h>
+bool success, failed;
+
+void Function3()
+{
+	// acquire resource1
+	if (success)
+	{
+		// acquire resource2
+		if (success)
+		{
+			// do operation3
+			if (success)
+			{
+				// acquire resource4
+				if (success)
+				{
+					// do real work
+				}
+				else
+				{
+					// deal with error
+				}
+			}
+			else
+			{
+				// deal with error
+			}
+		}
+		else
+		{
+			// deal with error
+		}
+	}
+	else
+	{
+		// deal with error
+	}
+
+	// free resource4
+	// free resource2
+	// free resource1
+}
+
+void Function4()
+{
+	// acquire resource1, holding with RAII class
+	if (failed)
+	{
+		// deal with error
+		return;
+	}
+
+	// acquire resource2, holding with RAII class
+	if (failed)
+	{
+		// deal with error
+		return;
+	}
+
+	// do operation3
+	if (failed)
+	{
+		// deal with error
+		return;
+	}
+
+	// acquire resource4, holding with RAII class
+	if (failed)
+	{
+		// deal with error
+		return;
+	}
+
+	// do real work
+}
+
 
 #define MAX_LOADSTRING 100
 
@@ -31,17 +108,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE , _In_ LPTSTR
 {
 	InitLog();
 	Log(LL_EVENT, TAG_DEFAULT, L"handyrun进程启动，命令行：[%s]", lpCmdLine);
-
-	HrInitCore(L"d:\\", NULL);
-
-	HANDLE hcfg;
-	HANDLE hsc;
-	HrOpenConfig(NULL, L"xxx.xml", &hcfg);
-	HrOpenConfig(hcfg, L"aaa", &hsc);
-	HrSetConfigString(hsc, L"name", L"timepp鞭奇才");
-	HrSetConfigString(hsc, L"value", L"clever");
-	HrCloseConfig(hsc);
-	HrCloseConfig(hcfg);
 
 	// TODO: Place code here.
 	MSG msg;
