@@ -1,13 +1,16 @@
-* XP or below
+# On System without UAC (or with UAC turned off)
 there is always one HandyRun process.
 
-* VISTA+
-on vista+:
+# On System with UAC
+
 - if a process is elevated, then it cannot become a drop target if the drop source is a normal process which is not elevated. 
 - if a process is non-elevated, then it cannot serve double-press hotkeys if the foreground process is elevated.
 
-so, a single process solution can not work perfectly in all cases. HandyRun uses process-pair model(PPM).
-- if HandyRun is started non-elevated, it will launch a elevated copy when necessary. All necessary cases are listed here: 1. if the hotkey is a double-press hotkey.
-- if HandyRun is started elevated, it will always launch a non-elevated copy.
+so, a single process solution can not work perfectly in all cases. HandyRun uses multi-process model.
+
+- if HandyRun starts elevated, it will launch a non-elevated copy. The elevated copy does not exit.
+- if HandyRun starts non-elevated, when it needs long-term admin rights, such as handling the double-click hotkeys, it will ask the elevated copy to do it. If the elevated copy does not exist, it will launch a new elevated copy.
+
 in all cases, the non-elevated copy become "HandyRun Main Process" -- HMP, which provides most functions, including show UI, display tray icon, etc. the elevated copy become "HandyRun Background Process" -- HBP, which provides functions need high priveledge, such as double-press key listener.
 
+Although there may be an additional HandyRun process in the system, it won't take more memory. They has same binary, so the most memory is shared with each other.
